@@ -9,7 +9,6 @@ class SignUpPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: green,
       body: Stack(
         children: [
           Column(
@@ -17,8 +16,8 @@ class SignUpPage extends StatelessWidget {
               Expanded(
                 flex: 1,
                 child: Container(
-                  color: green,
-                ),
+                    // color: green,
+                    ),
               ),
               Expanded(
                 flex: 1,
@@ -43,13 +42,12 @@ class SignUpPage extends StatelessWidget {
                       TextFormField(),
                       SizedBox(height: 20),
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Container(
                             width: 50,
                             child: TextFormField(),
                           ),
-                          SizedBox(width: 40),
                           Container(
                             width: 200,
                             child: TextFormField(),
@@ -97,14 +95,15 @@ class SignUpPage extends StatelessWidget {
             right: 30,
             left: 240,
             child: Container(
-              height: 94,
+              height: 80,
               decoration: BoxDecoration(
-                color: Colors.amber,
+                color: green,
                 shape: BoxShape.circle,
               ),
               child: Icon(
                 Icons.arrow_forward,
                 size: 50,
+                color: white,
               ),
             ),
           ),

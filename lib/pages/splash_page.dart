@@ -16,7 +16,7 @@ class SplashPage extends StatefulWidget {
 class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
-    Timer(Duration(seconds: 3), () => Get.toNamed(RouteHelper.signUp));
+    Timer(Duration(seconds: 3), () => Get.toNamed(RouteHelper.onBoarding));
     super.initState();
   }
 

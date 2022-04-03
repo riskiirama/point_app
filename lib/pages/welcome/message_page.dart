@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:point_app/routes/route.dart';
 import 'package:point_app/theme.dart';
 import 'package:get/get.dart';
 
@@ -36,10 +37,15 @@ class MessagePage extends StatelessWidget {
           itemBuilder: (context, index) {
             return Column(
               children: [
-                ListTile(
-                  leading: CircleAvatar(),
-                  title: Text('data'),
-                  subtitle: Text('data'),
+                GestureDetector(
+                  onTap: () {
+                    Get.toNamed(RouteHelper.chat);
+                  },
+                  child: ListTile(
+                    leading: CircleAvatar(),
+                    title: Text('data'),
+                    subtitle: Text('data'),
+                  ),
                 ),
                 Divider(
                   thickness: 2,
