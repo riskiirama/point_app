@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:point_app/routes/route.dart';
 import 'package:point_app/theme.dart';
 
 class HomePage extends StatelessWidget {
@@ -18,15 +19,20 @@ class HomePage extends StatelessWidget {
             child: Row(
               children: [
                 Icon(
-                  Icons.list,
+                  Icons.dehaze,
                   color: Colors.white,
                 ),
                 SizedBox(width: 30),
                 Expanded(
                   child: TextFormField(
                     decoration: InputDecoration(
-                      suffixIcon: Icon(
-                        Icons.list,
+                      suffixIcon: GestureDetector(
+                        onTap: () {
+                          Get.toNamed(RouteHelper.list);
+                        },
+                        child: Icon(
+                          Icons.tune,
+                        ),
                       ),
                       prefixIcon: Icon(
                         Icons.search,
@@ -35,7 +41,7 @@ class HomePage extends StatelessWidget {
                       fillColor: Colors.white,
                       filled: true,
                       border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20),
+                        borderRadius: BorderRadius.circular(30),
                       ),
                     ),
                   ),
@@ -134,7 +140,7 @@ class HomePage extends StatelessWidget {
                                   BoxShadow(
                                     color: Colors.grey,
                                     blurRadius: 4,
-                                    offset: Offset(4, 8), // Shadow position
+                                    offset: Offset(4, 10), // Shadow position
                                   ),
                                 ],
                                 borderRadius: BorderRadius.circular(20),

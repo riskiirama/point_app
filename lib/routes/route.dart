@@ -13,6 +13,7 @@ import 'package:point_app/pages/splash_page.dart';
 import 'package:point_app/pages/welcome/buzz_page.dart';
 import 'package:point_app/pages/welcome/chat_page.dart';
 import 'package:point_app/pages/welcome/edit_profile_page.dart';
+import 'package:point_app/pages/welcome/list_page.dart';
 import 'package:point_app/pages/welcome/selected_catergory.dart';
 import 'package:point_app/pages/welcome/setting_page.dart';
 
@@ -34,6 +35,7 @@ class RouteHelper {
   static String chat = '/chat';
   static String editProfile = '/editProfile';
   static String setting = '/setting';
+  static String list = '/list';
   static String selectedCategory = '/selectedCategory';
   static String buzz = '/buzz';
 
@@ -53,6 +55,7 @@ class RouteHelper {
     GetPage(name: chat, page: () => ChatPage()),
     GetPage(name: editProfile, page: () => EditProfilePage()),
     GetPage(name: setting, page: () => SettingPage()),
+    GetPage(name: list, page: () => ListPage()),
     GetPage(name: selectedCategory, page: () => SelectedCategory()),
     GetPage(name: buzz, page: () => BuzzPage()),
   ];
