@@ -9,6 +9,7 @@ class SignUpPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: greenDark,
       body: Stack(
         children: [
           Column(
@@ -16,8 +17,11 @@ class SignUpPage extends StatelessWidget {
               Expanded(
                 flex: 1,
                 child: Container(
-                    // color: green,
-                    ),
+                  child: Image.asset(
+                    'assets/animasi.png',
+                  ),
+                  color: greenDark,
+                ),
               ),
               Expanded(
                 flex: 1,
@@ -25,6 +29,14 @@ class SignUpPage extends StatelessWidget {
                   width: double.infinity,
                   padding: EdgeInsets.only(top: 80, left: 60, right: 60),
                   decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.6),
+                        spreadRadius: 8,
+                        blurRadius: 6,
+                        offset: Offset(0, 14),
+                      ),
+                    ],
                     color: white,
                     borderRadius: BorderRadius.vertical(
                       top: Radius.circular(60),
@@ -59,6 +71,10 @@ class SignUpPage extends StatelessWidget {
                         child: Text(
                           'You will get and OTP\nCarrier charges my apply',
                           textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: grey,
+                            fontSize: 12,
+                          ),
                         ),
                       ),
                       SizedBox(height: 40),
@@ -69,6 +85,7 @@ class SignUpPage extends StatelessWidget {
                             'Forget password?',
                             style: TextStyle(
                               decoration: TextDecoration.underline,
+                              color: green,
                             ),
                           ),
                           GestureDetector(
@@ -79,6 +96,7 @@ class SignUpPage extends StatelessWidget {
                               'Sign in',
                               style: TextStyle(
                                 decoration: TextDecoration.underline,
+                                color: green,
                               ),
                             ),
                           ),
@@ -91,7 +109,7 @@ class SignUpPage extends StatelessWidget {
             ],
           ),
           Positioned(
-            bottom: 360,
+            bottom: 340,
             right: 30,
             left: 240,
             child: Container(
@@ -100,13 +118,30 @@ class SignUpPage extends StatelessWidget {
                 color: green,
                 shape: BoxShape.circle,
               ),
-              child: Icon(
-                Icons.arrow_forward,
-                size: 50,
-                color: white,
+              child: GestureDetector(
+                onTap: () {
+                  Get.toNamed(RouteHelper.verifkasi);
+                },
+                child: Icon(
+                  Icons.arrow_forward_rounded,
+                  size: 40,
+                  color: white,
+                ),
               ),
             ),
           ),
+          Positioned(
+            top: 80,
+            left: 40,
+            child: Text(
+              'Ready to\nSend &\nReceive ?',
+              style: TextStyle(
+                color: white,
+                fontSize: 38,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          )
         ],
       ),
     );

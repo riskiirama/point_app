@@ -11,130 +11,196 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: green,
+      backgroundColor: greenDark,
       body: Stack(
         children: [
           Column(
             children: [
-              Container(
-                height: 200,
-                color: green,
-              ),
-              Container(
-                padding: EdgeInsets.only(top: 40, left: 20, right: 20),
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.vertical(
-                    top: Radius.circular(40),
-                  ),
-                  color: white,
+              Expanded(
+                flex: 1,
+                child: Container(
+                  color: greenDark,
                 ),
-                child: Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        GestureDetector(
-                          onTap: () => Get.toNamed(RouteHelper.editProfile),
-                          child: Icon(
-                            Icons.edit,
-                            size: 18,
-                            color: green,
-                          ),
-                        ),
-                      ],
-                    ),
-                    Text('Aqib Shabir'),
-                    SizedBox(height: 20),
-                    Text('Al-Khail Heights, Dubai'),
-                    SizedBox(height: 20),
-                    Container(
-                      height: 435,
-                      child: ContainedTabBarView(
-                        tabBarProperties: TabBarProperties(
-                          height: 32.0,
-                          indicatorColor: Colors.greenAccent,
-                          indicatorWeight: 2.0,
-                          labelColor: green,
-                          unselectedLabelColor: Colors.grey[400],
-                        ),
-                        tabs: [
-                          Text(
-                            'Received',
-                            style: TextStyle(fontSize: 18),
-                          ),
-                          Text(
-                            'Sent',
-                            style: TextStyle(fontSize: 18),
-                          ),
-                          Text(
-                            'Favourites',
-                            style: TextStyle(fontSize: 18),
-                          ),
-                        ],
-                        views: [
-                          Container(
-                            padding: EdgeInsets.only(
-                              top: 10,
-                            ),
-                            child: Column(
-                              children: [
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceAround,
-                                  children: [
-                                    ReceivedCard(),
-                                    ReceivedCard(),
-                                    ReceivedCard(),
-                                  ],
-                                ),
-                                SizedBox(height: 20),
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceAround,
-                                  children: [
-                                    ReceivedCard(),
-                                    ReceivedCard(),
-                                    ReceivedCard(),
-                                  ],
-                                ),
-                                SizedBox(height: 20),
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceAround,
-                                  children: [
-                                    ReceivedCard(),
-                                    ReceivedCard(),
-                                    ReceivedCard(),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
-                          Container(color: Colors.green),
-                          Container(color: Colors.amber),
-                        ],
-                        onChange: (index) => print(index),
+              ),
+              Expanded(
+                flex: 3,
+                child: Container(
+                  width: double.infinity,
+                  padding: EdgeInsets.only(top: 40, left: 20, right: 20),
+                  decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.6),
+                        spreadRadius: 8,
+                        blurRadius: 6,
+                        offset: Offset(0, 14),
                       ),
+                    ],
+                    color: white,
+                    borderRadius: BorderRadius.vertical(
+                      top: Radius.circular(60),
                     ),
-                  ],
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(right: 20),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            GestureDetector(
+                              onTap: () => Get.toNamed(RouteHelper.editProfile),
+                              child: Icon(
+                                Icons.edit,
+                                size: 24,
+                                color: green,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(height: 10),
+                      Center(
+                        child: Text(
+                          'Aqib Shabir',
+                          style: TextStyle(
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 6),
+                      Center(
+                        child: Text(
+                          'Al-Khail Heights, Dubai',
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 20),
+                      Expanded(
+                        child: Container(
+                          child: ContainedTabBarView(
+                            tabBarProperties: TabBarProperties(
+                              height: 32.0,
+                              indicatorColor: Colors.greenAccent,
+                              indicatorWeight: 2.0,
+                              labelColor: green,
+                              unselectedLabelColor: Colors.grey[400],
+                            ),
+                            tabs: [
+                              Text(
+                                'Received',
+                                style: TextStyle(fontSize: 18),
+                              ),
+                              Text(
+                                'Sent',
+                                style: TextStyle(fontSize: 18),
+                              ),
+                              Text(
+                                'Favourites',
+                                style: TextStyle(fontSize: 18),
+                              ),
+                            ],
+                            views: [
+                              Container(
+                                padding: EdgeInsets.only(
+                                  top: 10,
+                                ),
+                                child: Column(
+                                  children: [
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceAround,
+                                      children: [
+                                        ReceivedCard(),
+                                        ReceivedCard(),
+                                        ReceivedCard(),
+                                      ],
+                                    ),
+                                    SizedBox(height: 20),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceAround,
+                                      children: [
+                                        ReceivedCard(),
+                                        ReceivedCard(),
+                                        ReceivedCard(),
+                                      ],
+                                    ),
+                                    SizedBox(height: 20),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceAround,
+                                      children: [
+                                        ReceivedCard(),
+                                        ReceivedCard(),
+                                        ReceivedCard(),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Container(color: Colors.green),
+                              Container(color: Colors.amber),
+                            ],
+                            onChange: (index) => print(index),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ],
           ),
           Positioned(
             top: 140,
-            right: 0,
-            left: 0,
+            right: 40,
+            left: 40,
             child: Container(
-              height: 100,
+              height: 110,
               decoration: BoxDecoration(
                 border: Border.all(color: white),
-                color: Colors.amber,
+                color: green,
                 shape: BoxShape.circle,
+              ),
+              child: Icon(
+                Icons.arrow_forward_rounded,
+                size: 40,
+                color: white,
               ),
             ),
           ),
+          Positioned(
+            top: 50,
+            right: 40,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    Get.toNamed(RouteHelper.setting);
+                  },
+                  child: Container(
+                    width: 30,
+                    height: 30,
+                    decoration: BoxDecoration(
+                      color: white,
+                      shape: BoxShape.circle,
+                    ),
+                    child: Icon(
+                      Icons.settings,
+                      color: grey,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          )
         ],
       ),
     );

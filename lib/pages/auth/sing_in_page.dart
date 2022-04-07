@@ -10,7 +10,7 @@ class SignInPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: green,
+      backgroundColor: greenDark,
       body: Stack(
         children: [
           Column(
@@ -18,7 +18,8 @@ class SignInPage extends StatelessWidget {
               Expanded(
                 flex: 1,
                 child: Container(
-                  color: green,
+                  child: Image.asset('assets/animasi.png'),
+                  color: greenDark,
                 ),
               ),
               Expanded(
@@ -57,12 +58,19 @@ class SignInPage extends StatelessWidget {
                             'Forget password?',
                             style: TextStyle(
                               decoration: TextDecoration.underline,
+                              color: green,
                             ),
                           ),
-                          Text(
-                            'Sign Up',
-                            style: TextStyle(
-                              decoration: TextDecoration.underline,
+                          GestureDetector(
+                            onTap: () {
+                              Get.toNamed(RouteHelper.signUp);
+                            },
+                            child: Text(
+                              'Sign Up',
+                              style: TextStyle(
+                                decoration: TextDecoration.underline,
+                                color: green,
+                              ),
                             ),
                           ),
                         ],
@@ -74,13 +82,13 @@ class SignInPage extends StatelessWidget {
             ],
           ),
           Positioned(
-            bottom: 360,
+            bottom: 340,
             right: 30,
             left: 240,
             child: Container(
-              height: 94,
+              height: 80,
               decoration: BoxDecoration(
-                color: Colors.amber,
+                color: green,
                 shape: BoxShape.circle,
               ),
               child: GestureDetector(
@@ -88,12 +96,25 @@ class SignInPage extends StatelessWidget {
                   Get.toNamed(RouteHelper.welcome);
                 },
                 child: Icon(
-                  Icons.arrow_forward,
-                  size: 50,
+                  Icons.arrow_forward_rounded,
+                  size: 40,
+                  color: white,
                 ),
               ),
             ),
           ),
+          Positioned(
+            top: 80,
+            left: 40,
+            child: Text(
+              'Welcome\nBack',
+              style: TextStyle(
+                color: white,
+                fontSize: 38,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          )
         ],
       ),
     );

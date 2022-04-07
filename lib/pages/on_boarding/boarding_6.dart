@@ -15,7 +15,9 @@ class OnBoarding6Page extends StatelessWidget {
             children: [
               Expanded(
                 flex: 1,
-                child: Container(),
+                child: Container(
+                  child: Image.asset('assets/animasi.png'),
+                ),
               ),
               Expanded(
                 flex: 1,
@@ -23,6 +25,14 @@ class OnBoarding6Page extends StatelessWidget {
                   width: double.infinity,
                   padding: EdgeInsets.only(top: 100, left: 40, right: 40),
                   decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.6),
+                        spreadRadius: 8,
+                        blurRadius: 6,
+                        offset: Offset(0, 14),
+                      ),
+                    ],
                     color: white,
                     borderRadius: BorderRadius.vertical(
                       top: Radius.circular(60),
@@ -58,7 +68,7 @@ class OnBoarding6Page extends StatelessWidget {
             ],
           ),
           Positioned(
-            bottom: 360,
+            bottom: 340,
             right: 30,
             left: 240,
             child: Container(
@@ -72,8 +82,8 @@ class OnBoarding6Page extends StatelessWidget {
                   Get.toNamed(RouteHelper.onBoarding7);
                 },
                 child: Icon(
-                  Icons.arrow_forward,
-                  size: 50,
+                  Icons.arrow_forward_rounded,
+                  size: 40,
                   color: white,
                 ),
               ),
