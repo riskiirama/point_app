@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:point_app/routes/route.dart';
+import 'package:point_app/theme.dart';
 
 class ListPage extends StatefulWidget {
   const ListPage({Key? key}) : super(key: key);
@@ -16,26 +18,31 @@ class _ListPageState extends State<ListPage> {
       child: Scaffold(
         appBar: AppBar(
           elevation: 0,
-          backgroundColor: Colors.white,
-          title: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Icon(
-                Icons.arrow_back,
-                color: Colors.green,
-              ),
-              Text(
-                'List',
-                style: TextStyle(color: Colors.black),
-              ),
-              GestureDetector(
-                onTap: () {},
+          actions: [
+            Padding(
+              padding: EdgeInsets.only(right: 20),
+              child: GestureDetector(
+                onTap: () {
+                  Get.toNamed(RouteHelper.selectedCategory);
+                },
                 child: Icon(
-                  Icons.list,
-                  color: Colors.green,
+                  Icons.tune,
+                  color: black,
                 ),
               ),
-            ],
+            ),
+          ],
+          backgroundColor: Colors.white,
+          leading: GestureDetector(
+            onTap: () {
+              Get.back();
+            },
+            child: Icon(Icons.arrow_back_ios, color: green),
+          ),
+          centerTitle: true,
+          title: Text(
+            'List',
+            style: TextStyle(color: Colors.black),
           ),
           bottom: TabBar(
             labelColor: Colors.green,

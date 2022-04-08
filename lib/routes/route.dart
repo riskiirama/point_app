@@ -12,8 +12,10 @@ import 'package:point_app/pages/auth/sing_in_page.dart';
 import 'package:point_app/pages/splash_page.dart';
 import 'package:point_app/pages/welcome/buzz_page.dart';
 import 'package:point_app/pages/welcome/chat_page.dart';
+import 'package:point_app/pages/welcome/detail_page.dart';
 import 'package:point_app/pages/welcome/edit_profile_page.dart';
 import 'package:point_app/pages/welcome/list_page.dart';
+import 'package:point_app/pages/welcome/party_page.dart';
 import 'package:point_app/pages/welcome/selected_catergory.dart';
 import 'package:point_app/pages/welcome/setting_page.dart';
 
@@ -38,6 +40,8 @@ class RouteHelper {
   static String list = '/list';
   static String selectedCategory = '/selectedCategory';
   static String buzz = '/buzz';
+  static String party = '/party';
+  static String detail = '/detail';
 
   static List<GetPage> routes = [
     GetPage(name: splash, page: () => SplashPage()),
@@ -58,5 +62,7 @@ class RouteHelper {
     GetPage(name: list, page: () => ListPage()),
     GetPage(name: selectedCategory, page: () => SelectedCategory()),
     GetPage(name: buzz, page: () => BuzzPage()),
+    GetPage(name: party, page: () => PartyPage()),
+    GetPage(name: detail, page: () => DetailPage()),
   ];
 }

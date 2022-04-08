@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class CategoryList extends StatelessWidget {
-  const CategoryList({Key? key}) : super(key: key);
+  final String title;
+  const CategoryList({Key? key, required this.title}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -9,7 +10,10 @@ class CategoryList extends StatelessWidget {
       leading: Icon(
         Icons.access_time_filled_outlined,
       ),
-      title: Text('wwww'),
+      title: Text(
+        title,
+        style: TextStyle(fontWeight: FontWeight.w600),
+      ),
       subtitle: Padding(
         padding: const EdgeInsets.only(top: 2),
         child: Divider(
