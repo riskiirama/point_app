@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:point_app/theme.dart';
 
 class EditProfile extends StatelessWidget {
   final String title;
@@ -12,12 +13,16 @@ class EditProfile extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        Text(title),
-        TextFormField(
-          decoration: InputDecoration(
-            hintText: text,
-          ),
+        Text(
+          title,
+          style: TextStyle(color: grey),
         ),
+        SizedBox(height: 10),
+        Text(
+          text,
+          style: TextStyle(fontSize: 16),
+        ),
+        Divider(thickness: 0.7),
       ],
     );
   }

@@ -94,6 +94,17 @@ class _SettingPageState extends State<SettingPage> {
                   });
                 },
               ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Text(
+                    '5 KM.',
+                    style: TextStyle(
+                      color: Colors.grey,
+                    ),
+                  ),
+                ],
+              ),
               Divider(),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -105,28 +116,35 @@ class _SettingPageState extends State<SettingPage> {
                     ),
                   ),
                   Text(
-                    'KM.',
+                    'Km.',
                     style: TextStyle(
                       color: Colors.grey,
                     ),
                   ),
                 ],
               ),
+              SizedBox(height: 16),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      primary: Colors.green,
-                    ),
-                    child: Text(
-                      'Km',
-                      style: TextStyle(
-                        color: Colors.white,
+                  Container(
+                    width: 140,
+                    height: 42,
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8)),
+                        primary: green,
+                      ),
+                      child: Text(
+                        'Km',
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
                       ),
                     ),
                   ),
+                  SizedBox(width: 180),
                   Text(
                     'Mi.',
                     style: TextStyle(
